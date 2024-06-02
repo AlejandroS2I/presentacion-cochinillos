@@ -52,7 +52,175 @@
 					</script>
 				</section>
 				<section>
-					<h2>Metodología</h2>
+					<section>
+						<h2>Metodología</h2>
+						<div class="r-stack">
+							<div class="fragment">
+								<img src="assets/agile.png" alt="Agile">
+								<aside class="notes">
+									En este proyecto he seguido la metodología ágil, la cual se basa en poder entregar
+									versiones funcionales al cliente en cuanto sea posible. Es por esto mismo que no
+									se han realizado muchas tareas de diseño en la primera parte del proyecto, sino que
+									se intenta comenzar con el desarrollo cuanto antes. Esta metodología es algo muy
+									utilizado en empresas de desarrollo, ya que se ha observado que cuando se llevan a
+									cabo muchas tareas de diseño o preparación a la hora de desarrollar software se gasta
+									mucho tiempo para luego, con lo rápidamente cambiante que es el mundo del
+									desarrollo software, se tenga que volver a realizar por modificaciones del cliente o que
+									este simplemente lo cancele ya que no está viendo ningún resultado funcional al mes
+									de haber empezado el proyecto.
+								</aside>
+							</div>
+							<ul style="background: #282828;" class="fragment">
+								<li>
+									Primer funcional
+									<aside class="notes">
+										En mi caso he desarrollado un método en base a mi experiencia en las dos empresas
+										en las que he trabajado además de diferentes fuentes de información. En este
+										desarrollo un primer funcional en el que se encuentra las funcionalidades requeridas
+										de la aplicación de forma muy general, este se desarrolla en una reunión con el cliente
+										y después se le presentará junto a un presupuesto para que lo pueda aceptar si está
+										de acuerdo con los requerimientos de la aplicación y con sus costes.
+									</aside>
+								</li>
+								<li class="fragment fade-right">
+									Segundo funcional
+									<aside class="notes">
+										Tras esto se realizará un segundo funcional en el que se desarrollará más en detalle
+										las funcionalidades, como es el caso de una aplicación web se enumeran las pantallas
+										que deberán ser desarrolladas y cada función que debe tener esta, ej. Pantalla de
+										listado de partidos con una lista en la que se muestran los partidos con los campos:
+										Nombre equipo casa, nombre equipo visitante, goles equipo casa, goles equipo
+										visitante, liga a la que pertenece y fecha en el que tiene lugar. Gracias a este segundo
+										funcional los desarrolladores pueden saber las funcionalidades exactas que tienen que
+										llevar a cabo.
+									</aside>
+								</li>
+								<li class="fragment fade-right">
+									Control de tareas
+									<aside class="notes">
+										A partir de este momento todas las tareas realizadas por el equipo serán
+										apuntadas, no tienen porqué ser organizadas pero si se debe contar las horas y el
+										porqué de estas para que la cabeza del equipo pueda guiar al grupo acordemente.
+										Pienso que la cabeza del equipo no puede ser simplemente un gerente, ya que estos
+										no tienen un punto de vista interno del estado del proyecto, sino que es preferible que
+										la cabeza del equipo sea uno más de este que sencillamente guíe a sus compañeros,
+										pero que se priorice la decisión y organización individual. Esto es porque el mayor
+										problema con las nuevas metodologías ágiles como es “SCRUM” es la necesidad de
+										una cabeza que organice el proyecto, haciendo que todos los encargados de su
+										desarrollo dependan de este/a en todo momento y dando a lugar a momentos en los
+										que no están desarrollando a la espera de nuevas tareas u órdenes que les sean
+										asignadas. Además, si este no está teniendo parte en el proyecto, existe el problema
+										de las constantes reuniones diarias/semanales para ponerle al día cuando los
+										integrantes del equipo ya tienen claro el estado del proyecto y cuales son los
+										siguientes pasos a seguir.
+									</aside>
+								</li>
+								<li class="fragment fade-right">
+									Diseño
+									<aside class="notes">
+										Antes de empezar a desarrollar se realiza un diseño inicial para poder observar cómo
+										va a ser el estilo general de la aplicación, este no tiene por qué ser de todas las
+										pantallas ya que, al estar utilizando el método ágil, toda tarea que no sea desarrollo
+										se tomará como pérdida de tiempo, se diseñará solamente lo necesario para que los
+										desarrolladores comprendan la vista general.
+										Mientras el diseño de la interfaz de usuario es realizado se llevará a cabo el diseño y
+										creación de la base de datos, esta es muy probable que sufra cambios a lo largo del
+										desarrollo pero se necesita una primera base para poder comenzar con este. Es
+										recomendable generar o realizar un esquema de la base de datos para que los
+										desarrolladores puedan ver su estructura y desarrollar contando con esta, ya que todo
+										lo que ayude en el desarrollo de la aplicación es una buena inversión. La base de
+										datos es el cimiento de la aplicación así que esta debe ser desarrollada por alguien
+										con experiencia y metodológico, tomándose el tiempo que necesite ya que sin esta o
+										con una base de datos mal diseñada todo el proyecto sufre
+									</aside>
+								</li>
+								<li class="fragment fade-right">
+									Primera versión
+									<aside class="notes">
+										Tras estos dos últimos pasos ya tenemos lo suficiente para realizar una primera
+										versión de la aplicación, esta puede ser una pequeña parte del objetivo final ya que
+										como se ha mencionado antes la idea es presentar al cliente con productos
+										funcionales cuanto antes, así podremos recibir críticas o cambios en una fase inicial
+										del desarrollo y será sencillo realizar lo necesario para cumplir las modificaciones.
+									</aside>
+								</li>
+								<li class="fragment fade-right">
+									CI/CD
+									<aside class="notes">
+										Para poder presentar al cliente esta primera versión de la aplicación deberemos
+										realizar las tareas de CI/CD o implementación de código, donde crearemos un lugar
+										centralizado en el que guardar el código de la aplicación y un servidor para ejecutar
+										esta. Para poder realizar la conexión entre el desarrollador, el repositorio y el servidor
+										de forma sencilla y sin fricción se realizará las tareas que hemos mencionado antes,
+										con tareas que se ejecutarán automáticamente al subir los cambios al repositorio
+										compilando el código, probándolo y subiéndose al servidor para que el cliente pueda
+										acceder a este.
+									</aside>
+								</li>
+								<li class="fragment fade-right">
+									Desarrollo
+									<aside class="notes">
+										Después de esta primera pequeña versión para poder realizar la configuración del
+										repositorio y servidor se seguirá con el desarrollo haciendo pequeñas partes de la
+										aplicación que estén totalmente finalizadas para que el cliente sea capaz de tener
+										una vista del progreso del proyecto. Esto, como se ha mencionado antes, nos deja
+										adaptarnos a las modificaciones o problemas que pueda ver el cliente en las secciones
+										funcionales de la aplicación, teniendo así una retroalimentación instantánea con la que
+										podemos trabajar sin tener que volver a generar interminables documentos de diseño
+										volviendo al comienzo del proyecto. Es también cierto que, dependiendo de estas
+										modificaciones, se le podrá cobrar al cliente extra ya que se toma el presupuesto como
+										un número provisional y no final; si la modificación se puede llegar a un acuerdo de
+										que puede haber estado reflejada al comienzo o sea error de desarrollo no se
+										aumentará el cobro, pero si el cambio es sustancial y añade trabajo extra a los
+										desarrolladores si que lo hará.
+									</aside>
+								</li>
+							</ul>
+						</div>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Entorno de trabajo</h2>
+						<p>modelo centralizado</p>
+					</section>
+					<section>
+						<img style="height:30vh" src="assets/HTML.png" alt="HTML">
+						<img style="height:32vh" src="assets/CSS.png" alt="CSS">
+						<img style="height:34vh" src="assets/JS.png" alt="JavaScript">
+					</section>
+					<section>
+						<img src="assets/htmx.png" alt="HTMX">
+						<span data-markdown>
+							<script type="text/template">
+							```html
+							<!DOCTYPE>
+							<html>
+								<title>Ejemplo de HTMX</title>
+								<script src="https://unpkg.com/htmx.org@1.5.0">
+							</html>
+							<body>
+								<h1>Ejemplo de HTMX</h1>
+								<button
+									hx-get="/mensaje"
+									hx-target="#respuesta"
+								>Haz clic aquí</button>
+								<div id="respuesta"></div>
+							</body>
+							```
+							</script>
+						</span>
+					</section>
+					<section>
+						<img style="height: 20vh;" src="assets/rust.png" alt="Rust">
+						<div style="width: 100%;" data-markdown>
+							<script type="text/template">
+								- Seguridad de memoria <!-- .element class="fragment fade-right" -->
+								- Rendimiento <!-- .element class="fragment fade-right" -->
+								- Sistema de tipos <!-- .element class="fragment fade-right" -->
+							</script>
+						</div>
+					</section>
 				</section>
 			</div>
 		</div>
@@ -67,6 +235,7 @@
 			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
+				totalTime: 1800,
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
