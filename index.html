@@ -219,6 +219,106 @@
 							</script>
 						</div>
 					</section>
+					<section>
+						<h3>Axum</h3>
+						<div style="width: 100%;" data-markdown>
+							<script type="text/template">
+							```rust
+							#[tokio::main]
+							async fn main() {
+							    let app = Router::new()
+								.route("/", get(root))
+
+							    let listener = tokio::net::TcpListener::
+								bind("0.0.0.0:3000").await.unwrap();
+							    axum::serve(listener, app).await.unwrap();
+							}
+
+							async fn root() -> &'static str {
+							    "Hello, World!"
+							}
+							```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h3>Askama</h3>
+						<div style="width: 100%;" data-markdown>
+							<script type="text/template">
+							```html
+							<p>Hola {{ nombre }}</p>
+							```
+							```rust
+							#[derive(Template)]
+							#[template(path = "hello.html")]
+							struct HelloTemplate {
+							    nombre: String,
+							}
+							```
+							</script>
+						</div>
+					</section>
+					<section>
+						<h3>SQLx</h3>
+						<div style="width: 100%;" data-markdown>
+							<script type="text/template">
+							```rust
+							pub struct TipoJugador {
+							    pub id: u32,
+							    pub nombre: String,
+							}
+							```
+							```rust
+							let tipo_jugador = sqlx::query_as!(
+								TipoJugador,
+								"
+									SELECT id, nombre FROM ltiposjugador
+									WHERE id = ?
+								",
+								id
+							)
+							.fetch_optional(&pool)
+							.await?;
+							```
+							</script>
+						</div>
+					</section>
+					<section>
+						<img style="width: 40%;" src="assets/docker.png" alt="docker">
+						<img style="width: 40%;" src="assets/github.png" alt="github">
+						<img style="width: 80%;" src="assets/caddy.png" alt="caddy">
+					</section>
+				</section>
+				<section>
+					<h2>Funcionalidades básicas</h2>
+					<ul>
+						<li class="fragment fade-right">Gestión de noticias</li>
+						<li class="fragment fade-right">Gestión de usuarios</li>
+						<li class="fragment fade-right">Gestión de datos</li>
+						<li class="fragment fade-right">Gestión de correo</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h2>Despliegue</h2>
+						<img src="assets/droplet.png" alt="Droplet">
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							### Dependencias
+							```bash
+							sudo apt-get update
+							sudo apt-get install docker.io
+							mkdir -p ~/.docker/cli-plugins/
+							curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose
+							```
+						</script>
+					</section>
+					<section>
+						<h3>Secretos y variables</h3>
+						<img style="width: 60%;" src="assets/secretos.png" alt="Secretos">
+						<img style="width: 60%;" src="assets/variables.png" alt="Variables">
+					</section>
 				</section>
 			</div>
 		</div>
