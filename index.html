@@ -397,6 +397,96 @@
 						<img style="filter: invert(1);" src="assets/administrador.png" alt="administrador">
 					</section>
 				</section>
+				<section>
+					<section>
+						<h2>Diseño base de datos</h2>
+					</section>
+					<section>
+						<img style="height: 70vh;" src="assets/diagramaERCochinillos.drawio.png" alt="Diagrama ER">
+					</section>
+					<section>
+						<img style="height: 70vh;" src="assets/diagramaRelacionalCochinillos.drawio.png" alt="Diagrama relacional">
+					</section>
+				</section>
+				<section>
+					<h2>Diseño UI</h2>
+					<div style="width: 100%; height: 60vh;" class="r-stack">
+						<img style="height: 100%;" class="fragment fade-out" data-fragment-index="0" src="assets/inicio.png" alt="inicio">
+						<img style="height: 100%;" class="fragment current-visible" data-fragment-index="0" src="assets/noticias.png" alt="noticias">
+						<img style="height: 100%;" class="fragment" src="assets/estadisticas.png" alt="estadisticas">
+					</div>
+				</section>
+				<section>
+					<section>
+						<h2>Estructura del código</h2>
+					</section>
+					<section>
+						<img src="assets/codigo.png" alt="codigo">
+					</section>
+					<section>
+						<img src="assets/src.png" alt="src">
+					</section>
+				</section>
+				<section>
+					<h2>Pruebas</h2>
+					<div data-markdown>
+						<script type="text/template">
+						```rust
+						#[sqlx::test(fixtures("usuarios"))]
+						async fn obtener_usuario(pool: MySqlPool) -> Result<()> {
+							let cm = ControladorModelo::new(pool).await?;
+
+							let usuario = ControladorUsuario::usuario_id(cm, 1).await
+							.unwrap_or_else(|| panic!("No se ha conseguido el usuario 1"))
+							.ok_or_else(|| panic!("No se ha conseguido el usuario 1"))
+							.unwrap();
+
+							assert_eq!(usuario.id, 1);
+
+							Ok(())
+						}
+						```
+						</script>
+					</div>
+				</section>
+				<section>
+					<h2>Manual de usuario</h2>
+					<a style="color: #EBDBB2; text-decoration: underline;" href="https://cochinillosvoladores.org">Acceso a la web</a>
+				</section>
+				<section>
+					<h2>Conclusiones</h2>
+					<aside class="notes">
+						Este proyecto me ha servido para poder aprender sobre cómo es desarrollar una
+						aplicación desde cero, ya que nunca he tenido la oportunidad de experimentarlo.
+						Hasta ahora no estaba del todo enterado de los problemas de las nuevas
+						metodologías que se supone que están basadas en la metodología ágil y como llevar
+						a cabo un desarrollo realmente acorde con esta metodología y lo mucho que se
+						beneficia un proyecto de esta, durante todo el proceso el seguir la metodología ágil
+						parecía lo más sensato y natural. Tampoco tenía la suficiente experiencia como para
+						comparar con anteriores desarrollos y predecir unos buenos tiempos para cada
+						sección del proyecto, esto sumado a la falta de conocimiento real de las herramientas
+						dañó y retrasó bastante el proceso, aunque estoy bastante contento con haber
+						conseguido superar estos problemas y de una forma que el resultado final sea algo
+						funcional y ordenado. También, las tecnologías que he utilizado se han mostrado ser
+						increíblemente útiles, sencillas y en general excelentes de utilizar pero también he
+						notado que lenguajes como rust los cuales tienen un enfoque de más bajo nivel que
+						otros lenguajes de servidor es que no compenetran de buena manera con la
+						metodología ágil, ya que te pasas mucho tiempo preparando la base, aunque como
+						se mencionó antes esto luego haga del proceso de desarrollo algo excepcional. Es
+						por esto que quiero seguir probando lenguajes que se acomoden más a mis gustos y
+						necesidades a la vez que se mantienen sencillos para poder servir al cliente con
+						secciones funcionales lo antes posible, el lenguaje que estoy ahora estudiando es
+						Gleam.
+					</aside>
+				</section>
+				<section>
+					<h2>Ampliaciones</h2>
+					<ul>
+						<li>Sistema de votaciones</li>
+						<li>Rigurosidad de pruebas</li>
+						<li>Panel de control</li>
+					</ul>
+				</section>
 			</div>
 		</div>
 
